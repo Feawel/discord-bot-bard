@@ -1,0 +1,22 @@
+{
+  "name": "discord-bot-bard",
+  "version": "1.0.0",
+  "description": "Discord bot to make RPG online easier",
+  "main": "bard.js",
+  "scripts": {
+    "start": "nodemon bard.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "0.3.2",
+    "discord.js": "12.4.1",
+    "express": "4.17.1",
+    "ffmpeg-static": "4.2.7",
+    "lodash": "4.17.20",
+    "nodemon": "2.0.6",
+    "save": "2.4.0",
+    "ytdl-core": "^4.0.1"
+  }
+}
