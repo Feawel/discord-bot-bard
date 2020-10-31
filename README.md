@@ -16,6 +16,8 @@ Discord bot bard to make stream rpg easier
 
 2. Pouvoir reprendre la lecture dans une playlist là où on l'avait arrêtée la dernière fois
 
-2. Pouvoir lancer une scène sur OBS
+3. Pouvoir lire en boucle une playlist
 
-3. Pouvoir captuer une ligne sur OBS pour créditer la musique 
+4. Pouvoir lancer une scène sur OBS
+
+5. Pouvoir captuer une ligne sur OBS pour créditer la musique 
