@@ -4,7 +4,7 @@
   "description": "Discord bot to make RPG online easier",
   "main": "bard.js",
   "scripts": {
-    "start": "nodemon bard.js"
+    "start": "DISCORD_TOKEN=$DISCORD_TOKEN nodemon bardr.js"
   },
   "keywords": [],
   "author": "",

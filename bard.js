@@ -67,4 +67,6 @@ client.on('message', async message => {
 
 })
 
-client.login('NzY5NjU2Mjk4ODU3MTY4OTc3.X5SMSQ.SF5Up9UHmBUcX03IWSZ3I2RePhA')
+console.log(process.env.DISCORD_TOKEN)
+
+client.login(process.env.DISCORD_TOKEN)
