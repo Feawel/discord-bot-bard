@@ -21,3 +21,9 @@ Discord bot bard to make stream rpg easier
 4. Pouvoir lancer une scène sur OBS
 
 5. Pouvoir captuer une ligne sur OBS pour créditer la musique 
+
+
+# Benchmark
+
+- Probot : https://probot.io/commands
+- Rythm : https://rythmbot.co/
