@@ -13,6 +13,7 @@ const rexVoicePlay = /(?=.*\b(play)\b)/i
 const rexVoiceStop = /(?=.*\b(stop|pause)\b)/i
 const rexVoiceResume = /(?=.*\b(resume)\b)/i
 const rexVoiceDisconnect = /(?=.*\b(disconnect)\b)/i
+const rexVoiceLaunch = /(?=.*\b(launch)\b)/i
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -45,6 +46,12 @@ client.on('message', async message => {
 
     case rexVoicePlay.test(content): {
       const guildDispatcher = commands.handleVoicePlay(message)
+      dispatcher[_.get('guild.id', message)] = await guildDispatcher
+      break
+    }
+
+    case rexVoiceLaunch.test(content): {
+      const guildDispatcher = commands.handleVoiceLaunch(message)
       dispatcher[_.get('guild.id', message)] = await guildDispatcher
       break
     }

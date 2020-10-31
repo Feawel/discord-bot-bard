@@ -1,6 +1,6 @@
 const _ = require('lodash/fp')
 const ytdl = require('ytdl-core')
-const { extractUrl, isYoutubeVideo } = require('../utils')
+const { extractUrl, isYoutubeVideo, extractPlaylistUrl } = require('../utils')
 
 let dispatcher = {}
 
@@ -30,14 +30,25 @@ const handleVoicePlay = async (message) => {
     const connection = await message.member.voice.channel.join()
     const dispatcher = await play({ connection, url})
     return dispatcher
+  } else {
+    message.reply("Tu n'aurais pas oublié l'URL par hasard ?")
   }
 }
 
-const handleVoiceStop = dispatcher => {
-  console.log(dispatcher)
-  return dispatcher.pause()
+const handleVoiceLaunch = async (message) => {
+  const url = extractPlaylistUrl(message)
+  if (url) {
+    const connection = await message.member.voice.channel.join()
+    const dispatcher = await play({ connection, url})
+    return dispatcher
+  } else {
+    message.reply("Ce ne sont pas les droïdes que vous recherchez... :wave:")
+  }
 }
-const handleVoiceResume = dispatcher => dispatcher.resume()
+
+const handleVoiceStop = dispatcher => dispatcher ? dispatcher.pause() : null
+
+const handleVoiceResume = dispatcher => dispatcher ? dispatcher.resume() : null
 
 const handleVoiceDisconnect = async (message) => {
   const connection = await message.member.voice.channel.join()
@@ -56,6 +67,7 @@ module.exports = {
   handleRobot,
   handleVoiceJoin,
   handleVoicePlay,
+  handleVoiceLaunch,
   handleVoiceDisconnect,
   handleVoiceStop,
   handleVoiceResume
